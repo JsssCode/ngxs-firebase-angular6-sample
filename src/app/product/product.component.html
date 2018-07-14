@@ -1,0 +1,37 @@
+<div class="product-wrapper">
+  <mat-card class="product-form-card">
+    <form [formGroup]="productForm">
+      <div class="product-form-container">
+
+        <mat-form-field>
+          <input matInput type="text" placeholder="id" formControlName="id">
+        </mat-form-field>
+
+        <mat-form-field>
+          <input matInput type="text" placeholder="name" formControlName="name">
+          <mat-error *ngIf="productForm.get('name')?.invalid">Invalid product name</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+          <input matInput type="text" placeholder="description" formControlName="description">
+          <mat-error *ngIf="productForm.get('description')?.invalid">Invalid product description</mat-error>
+        </mat-form-field>
+
+        <!--button>Submit</button-->
+      </div>
+    </form>
+  </mat-card>
+
+  <mat-card class="product-image-card">
+    <app-product-image *ngIf="productForm.get('id').value;else chooseAProduct" [productId]="productForm.get('id').value">
+    </app-product-image>
+    <ng-template #chooseAProduct>
+      <p>Choose a product in the product table</p>
+    </ng-template>
+  </mat-card>
+
+  <mat-card class="product-remain">
+    <app-product-remain *ngIf="productForm.get('id').value" [productId]="productForm.get('id').value">
+    </app-product-remain>
+  </mat-card>
+</div>

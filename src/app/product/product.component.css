@@ -1,0 +1,17 @@
+.product-wrapper{
+  margin: 50px;
+  display: flex;
+  flex-direction: row;
+}
+
+.product-wrapper > * {
+  width: 50%;
+}
+.product-form-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.product-form-container > * {
+  width: 50%;
+}

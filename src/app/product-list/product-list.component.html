@@ -1,0 +1,38 @@
+<app-product [product]="selectedProduct"></app-product>
+<div class="mat-elevation-z8">
+  <mat-table #table [dataSource]="dataSource" matSort aria-label="Elements">
+
+    <!-- Id Column -->
+    <ng-container matColumnDef="id">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Id</mat-header-cell>
+      <mat-cell *matCellDef="let row">{{row.id}}</mat-cell>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Name</mat-header-cell>
+      <mat-cell *matCellDef="let row">{{row.name}}</mat-cell>
+    </ng-container>
+
+    <!-- Name Description -->
+    <ng-container matColumnDef="description">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Description</mat-header-cell>
+      <mat-cell *matCellDef="let row">{{row.description}}</mat-cell>
+    </ng-container>
+
+    <!-- Delete button -->
+    <ng-container matColumnDef="X">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>X</mat-header-cell>
+      <mat-cell *matCellDef="let row">
+        <button (click)="removeProduct(row.id)">Delete product</button>
+      </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;" (click)="rowSelected(row)"></mat-row>
+  </mat-table>
+
+  <mat-paginator #paginator [length]="(this.stateProducts$ | async)?.length" [pageIndex]="0" [pageSize]="2" [pageSizeOptions]="[8, 16]">
+  </mat-paginator>
+</div>
+

@@ -1,0 +1,8 @@
+<div *ngIf="productRemain; else productIsAbsent">
+  <p> Inventory {{productRemain.quantity}} </p>
+  <p> Sum {{productRemain.totalsum}} </p>
+</div>
+
+<ng-template #productIsAbsent>
+  <p> No inventory for the product</p>
+</ng-template>
