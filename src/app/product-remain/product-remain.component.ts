@@ -6,12 +6,15 @@ import { ProductRemain } from '../shared';
 @Component({
   selector: 'app-product-remain',
   templateUrl: './product-remain.component.html',
-  styleUrls: ['./product-remain.component.css']
+  styleUrls: ['./product-remain.component.scss']
 })
 export class ProductRemainComponent implements OnChanges {
   
   @Input()
   productId: string;
+
+  @Input()
+  productName: string;
 
   productRemain: ProductRemain;
 

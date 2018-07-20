@@ -1,0 +1,42 @@
+.inventory-container {
+  display: flex;
+  flex-direction: row;
+}
+mat-card{
+  margin: 5px;
+  width: 50%;
+}
+mat-card-footer{
+  color: white;
+  padding: 5px;
+  text-align: left;
+}
+mat-card-footer > *{
+  display: inline-block;
+}
+
+mat-card-content{
+  text-align: center;
+}
+mat-icon{
+ color: white;
+ width: 30px;
+ height: 30px; 
+ vertical-align: middle; 
+}
+.quantity-footer{
+  background-color: #F6BB42;
+
+}
+.sum-footer{
+  background-color: #DA4453
+}
+
+p{
+  margin: 0px;
+}
+
+mat-card-footer :last-child{
+  margin-left: 30px;
+  display: block;
+}

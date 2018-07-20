@@ -1,6 +1,32 @@
 <div *ngIf="productRemain; else productIsAbsent">
-  <p> Inventory {{productRemain.quantity}} </p>
-  <p> Sum {{productRemain.totalsum}} </p>
+    <mat-card-title>Some {{productName}} Numbers</mat-card-title>
+    <mat-card-content>
+      <div class="inventory-container">
+
+        <mat-card>
+          <mat-card-content>
+            <h2>{{productRemain.quantity}}</h2>
+          </mat-card-content>
+          <mat-card-footer class="quantity-footer">
+            <mat-icon aria-hidden="true">store</mat-icon>
+            <p>Products</p>
+            <p>in Stock</p>
+          </mat-card-footer>
+
+        </mat-card>
+        <mat-card>
+          <mat-card-content>
+            <h2>${{productRemain.totalsum}}</h2>
+          </mat-card-content>
+          <mat-card-footer class="sum-footer">
+            <mat-icon aria-hidden="true">euro_symbol</mat-icon>
+            <p>Sum</p>
+            <p>of Products in Stock</p>
+          </mat-card-footer>
+        </mat-card>
+      </div>
+    </mat-card-content>
+
 </div>
 
 <ng-template #productIsAbsent>

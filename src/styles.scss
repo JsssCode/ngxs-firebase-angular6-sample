@@ -1,0 +1,20 @@
+@import '~@angular/material/theming';
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+@include mat-core();
+
+// Define the theme.
+$candy-app-primary: mat-palette($mat-indigo);
+$candy-app-accent:  mat-palette($mat-pink, A200, A100, A400);
+$candy-app-theme:   mat-light-theme($candy-app-primary, $candy-app-accent);
+
+// Include the theme styles for only specified components.
+@include mat-core-theme($candy-app-theme);
+@include mat-button-theme($candy-app-theme);
+@include mat-checkbox-theme($candy-app-theme);
+
+$custom-typography: mat-typography-config(
+    $font-family: 'Montserrat'
+);
+
+@include angular-material-typography($custom-typography);

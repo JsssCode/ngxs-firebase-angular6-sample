@@ -1,2 +1,3 @@
-
-<img mat-card-image *ngIf="srcImg" [src]="srcImg | async | safe: 'url'" alt="titleImg">
+<mat-card *ngFor="let imageUrl of srcImg; index as i">
+  <img mat-card-image [src]="imageUrl | async | safe: 'url'" alt="titleImg[i]">
+</mat-card>
