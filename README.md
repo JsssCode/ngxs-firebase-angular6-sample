@@ -1,6 +1,6 @@
 # NgxsFirebaseSample
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
+All hottest Angular technologies in one project: Angular 6, Material, Firebase Firestore, Angularfire2, NGXS. If you interested in further development, star the project and open new issue. Open to your suggestions. This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
 
 ## Development server
 
